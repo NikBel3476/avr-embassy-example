@@ -16,8 +16,6 @@ use embassy_time::Timer;
 use panic_halt as _;
 use ufmt::uwriteln;
 
-pub mod embassy;
-
 type Usart = atmega_hal::usart::Usart<USART0, Pin<Input, PD0>, Pin<Output, PD1>, MHz16>;
 
 #[embassy_executor::task]
@@ -33,7 +31,7 @@ async fn main(spawner: Spawner) -> ! {
     let dp = atmega_hal::Peripherals::take().unwrap();
     let pins = atmega_hal::pins!(dp);
 
-    embassy::init(dp.TC0);
+    avr_embassy::embassy::init(dp.TC0);
 
     let mut led = pins.pb5.into_output();
     led.set_low();

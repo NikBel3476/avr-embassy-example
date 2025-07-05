@@ -16,26 +16,18 @@ ufmt = "0.2.0"
 nb = "1.1.0"
 embedded-hal = "1.0"
 critical-section = "1.2.0"
-# avr-device = { git = "https://github.com/rahix/avr-device", rev = "36b05c7", features = [
-#     "rt",
-#     "atmega328p",
-# ] }
 avr-device = { version = "0.7.0", features = ["rt", "atmega328p"] }
 embassy-executor = { git = "https://github.com/embassy-rs/embassy", rev = "4af2d9a", features = [
     "arch-avr",
     "executor-thread",
 ] }
-embassy-time-driver = { git = "https://github.com/embassy-rs/embassy", rev = "4af2d9a", features = [
-    "tick-hz-1_000",
-] }
 embassy-time = { git = "https://github.com/embassy-rs/embassy", rev = "4af2d9a", features = [
     "generic-queue-8",
     "tick-hz-1_000",
 ] }
-embassy-time-queue-utils = { git = "https://github.com/embassy-rs/embassy", rev = "4af2d9a", features = [
-    "generic-queue-8",
+avr-embassy = { git = "https://github.com/NikBel3476/avr-embassy", ref = "602b567", features = [
+    "atmega328p",
 ] }
-portable-atomic = { version = "1.11.1", features = ["critical-section"] }
 
 [dependencies.atmega-hal]
 git = "https://github.com/rahix/avr-hal"

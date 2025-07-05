@@ -36,8 +36,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "avr-embassy-example"
+name = "avr-embassy"
 version = "0.1.0"
+source = "git+https://github.com/NikBel3476/avr-embassy#602b56745a4b5f2b716410b5713f9e16c9bdb591"
 dependencies = [
  "atmega-hal",
  "avr-device",
@@ -47,9 +48,23 @@ dependencies = [
  "embassy-time-driver",
  "embassy-time-queue-utils",
  "embedded-hal 1.0.0",
- "nb 1.1.0",
  "panic-halt",
  "portable-atomic",
+]
+
+[[package]]
+name = "avr-embassy-example"
+version = "0.1.0"
+dependencies = [
+ "atmega-hal",
+ "avr-device",
+ "avr-embassy",
+ "critical-section",
+ "embassy-executor",
+ "embassy-time",
+ "embedded-hal 1.0.0",
+ "nb 1.1.0",
+ "panic-halt",
  "ufmt",
 ]
 
